@@ -1,18 +1,13 @@
-package collegemangementsystem;
+package sistemaHospitalar;
 
 import java.sql.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author kishor
- */
-public class CollegeMangementSystem {
 
-    /**
-     * @param args the command line arguments
-     */
+public class SistemaGerenciamentoHospitalar {
+
+
     public static void main(String[] args) {
         System.out.println(" JDBC Start ");
         
