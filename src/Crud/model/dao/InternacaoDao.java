@@ -1,4 +1,4 @@
-package model.dao;
+package Crud.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,13 +8,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import connection.ConnectionFactory;
-import model.Internacao;
+import Crud.connection.ConnectionFactory;
+import Crud.model.Internacao;
 
 public class InternacaoDao {
     
-    public void create(Internacao internacao) {
-        Connection conn = ConnectionFactory.getConnection(); 
+    public void create(Crud.model.Internacao internacao) {
+        Connection conn = Crud.connection.ConnectionFactory.getConnection(); 
         PreparedStatement stmt = null;
 
         java.sql.Timestamp timestamp = new java.sql.Timestamp(System.currentTimeMillis());

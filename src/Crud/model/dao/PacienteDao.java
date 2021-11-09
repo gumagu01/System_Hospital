@@ -1,4 +1,4 @@
-package model.dao;
+package Crud.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,12 +8,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import connection.ConnectionFactory;
-import model.Paciente;
+import Crud.connection.ConnectionFactory;
+import Crud.model.Paciente;
 
 public class PacienteDao {
 
-    public void create(Paciente paciente) {
+    public void create(Crud.model.Paciente paciente) {
         Connection conn = ConnectionFactory.getConnection(); 
         PreparedStatement stmt = null;
 
