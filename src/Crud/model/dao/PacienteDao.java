@@ -23,18 +23,16 @@ public class PacienteDao {
 
         try {
             stmt = conn.prepareStatement("INSERT INTO gestao_hosp.paciente" +  
-            "(id, nome, sexo, data_nasc, cpf, plano_saude, created_at, deleted_at)" + 
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            stmt.setString(1, Integer.toString(paciente.getId()));
-            stmt.setString(2, paciente.getNome());
-            stmt.setString(3, paciente.getSexo());
-            stmt.setString(4, paciente.getDataNasc());
-            stmt.setString(5, paciente.getCpf());
-            stmt.setString(6, paciente.getPlanoSaude());
-            stmt.setString(7, now);
-            stmt.setString(8, "null");
+            "(nome, sexo, data_nasc, cpf, plano_saude, created_at)" + 
+            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            stmt.setString(1, paciente.getNome());
+            stmt.setString(2, paciente.getSexo());
+            stmt.setString(3, paciente.getDataNasc());
+            stmt.setString(4, paciente.getCpf());
+            stmt.setString(5, paciente.getPlanoSaude());
+            stmt.setString(6, now);
 
-            stmt.executeUpdate();
+            stmt.execute();
             // Print paciente salvo com sucesso
         }
         catch (SQLException ex){

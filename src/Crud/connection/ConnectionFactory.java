@@ -25,7 +25,15 @@ public class ConnectionFactory {
     }
 
     public static void closeConnection(Connection con) {
-        closeConnection(con);
+    	try {
+			if(con != null) {
+				con.close();
+			}
+		} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
     }
     
     public static void closeConnection(Connection con, PreparedStatement stmt) {

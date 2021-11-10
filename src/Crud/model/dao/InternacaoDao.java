@@ -23,18 +23,17 @@ public class InternacaoDao {
 
         try {
             stmt = conn.prepareStatement("INSERT INTO internacao" +  
-            "(id, paciente_id, data_entrada, data_saida, causa, quarto, created_at, deleted_at)" + 
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            stmt.setString(1, Integer.toString(internacao.getId()));
-            stmt.setString(2, Integer.toString(internacao.getPacienteId()));
-            stmt.setString(3, internacao.getDataEntrada());
-            stmt.setString(4, internacao.getDataSaida());
-            stmt.setString(5, internacao.getCausa());
-            stmt.setString(6, internacao.getQuarto());
-            stmt.setString(7, now);
-            stmt.setString(8, "null");
+            "(paciente_id, data_entrada, data_saida, causa, quarto, created_at, deleted_at)" + 
+            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            stmt.setString(1, Integer.toString(internacao.getPacienteId()));
+            stmt.setString(2, internacao.getDataEntrada());
+            stmt.setString(3, internacao.getDataSaida());
+            stmt.setString(4, internacao.getCausa());
+            stmt.setString(5, internacao.getQuarto());
+            stmt.setString(6, now);
+            stmt.setString(7, "null");
 
-            stmt.executeUpdate();
+            stmt.execute();
             // Print internacao salvo com sucesso
         }
         catch (SQLException ex){

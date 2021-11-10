@@ -1,6 +1,10 @@
 package sistemaHospitalar;
 
 import javax.swing.JOptionPane;
+
+import Crud.model.Paciente;
+import Crud.model.dao.PacienteDao;
+
 import java.sql.*;
 
 
@@ -97,30 +101,21 @@ public class Deletar_Paciente extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         try {
-           /*
-            String dbURL = "jdbc:derby://localhost:1527/collegeDB;create=true";
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            
-            Connection con= DriverManager.getConnection(dbURL);
-            Statement st = con.createStatement();*/
-            
+    
             String Tf1 = jTextField1.getText();
             
-            
-            
-            String queryDel = "Delete from Students where id =  "+Tf1;
-            //int res= st.executeUpdate(queryDel);
-            int res = 1;
-            System.out.println("Result = "+ res);
-            if(res==1){
-                System.out.println("deleted Sucessfully ");
-                JOptionPane.showMessageDialog(rootPane," Delete Sucessful. ");
-            }
-            else{
-                System.out.println("No any such id found ");
-                JOptionPane.showMessageDialog(rootPane," No any such id found ");
-            }
-            
+//            PacienteDao pdao = new PacienteDao();
+//            paciente = pdao.read(Integer.parseInt(Tf1));
+//           
+//            if(res==1){
+//                System.out.println("deleted Sucessfully ");
+//                JOptionPane.showMessageDialog(rootPane," Delete Sucessful. ");
+//            }
+//            else{
+//                System.out.println("No any such id found ");
+//                JOptionPane.showMessageDialog(rootPane," No any such id found ");
+//            }
+//            
         } catch (Exception ex) {
             System.out.println("Some Other error Occured");
         }
