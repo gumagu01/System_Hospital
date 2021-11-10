@@ -24,7 +24,7 @@ public class Por_data extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 102));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Consulta por data");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N

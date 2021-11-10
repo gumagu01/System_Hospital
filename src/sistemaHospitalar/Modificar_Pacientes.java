@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.sql.*;
 public class Modificar_Pacientes extends javax.swing.JFrame {   
-    public Cadastrar_Paciente() {
+    public Modificar_Pacientes() {
         initComponents();
     }
 
@@ -163,7 +163,7 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
             
             Statement st = con.createStatement();*/
       
-            System.out.println("Query4= "+ query4);
+
             //st.execute(query4);
             System.out.println("Your details Submited");
             JOptionPane.showMessageDialog(rootPane, "Your details Submited");
