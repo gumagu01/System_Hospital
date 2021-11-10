@@ -9,8 +9,8 @@ import Crud.model.Paciente;
 import Crud.model.dao.PacienteDao;
 
 import java.sql.*;
-public class PrintResult extends javax.swing.JFrame {   
-    public PrintResult(Internacao inte1) {
+public class PrintInternacao extends javax.swing.JFrame {   
+    public PrintInternacao(Internacao inte1) {
         initComponents(inte1);
     }
 
@@ -141,7 +141,7 @@ public class PrintResult extends javax.swing.JFrame {
     public static void main(String[] args) {
           java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               // new PrintResult(paciente1).setVisible(true);
+        
             }
         }); }
 
