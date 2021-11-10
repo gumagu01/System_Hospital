@@ -13,6 +13,9 @@ public class SistemaGerenciamentoHospitalar {
         
         System.out.println("Programis running on gui...");
         HomePage hp = new HomePage();
+        hp.pack();
+        hp.setSize(400, 300);
+        hp.setResizable(false);
         hp.setVisible(true);
     }
 

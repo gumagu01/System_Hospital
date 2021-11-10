@@ -4,8 +4,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.sql.*;
-public class Cadastrar_Paciente extends javax.swing.JFrame {   
-    public Cadastrar_Paciente() {
+public class Cadastrar_Data extends javax.swing.JFrame {   
+    public Cadastrar_Data() {
         initComponents();
     }
 
@@ -28,7 +28,7 @@ public class Cadastrar_Paciente extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 102, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 19)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
         jLabel1.setText(" Cadastro Paciente");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -43,7 +43,7 @@ public class Cadastrar_Paciente extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Plano de saúde");
+        jLabel5.setText("Plano de saude");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
@@ -205,7 +205,7 @@ public class Cadastrar_Paciente extends javax.swing.JFrame {
     public static void main(String args[]) {
           java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastrar_Paciente().setVisible(true);
+                new Cadastrar_Data().setVisible(true);
             }
         }); }
 
