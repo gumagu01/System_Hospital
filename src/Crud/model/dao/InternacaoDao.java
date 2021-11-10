@@ -52,7 +52,7 @@ public class InternacaoDao {
         
         try {
             stmt = conn.prepareStatement("SELECT * FROM internacao " + 
-            "WHERE internacao.deleted_at IS NOT NULL");
+            "WHERE internacao.deleted_at IS NULL");
             rs = stmt.executeQuery();
             
             while (rs.next()){
@@ -139,7 +139,7 @@ public class InternacaoDao {
         
         try {
             stmt = conn.prepareStatement("SELECT * FROM internacao " + 
-            "WHERE internacao.deleted_at IS NOT NULL " + 
+            "WHERE internacao.deleted_at IS NULL " + 
             "AND internacao.id = ?");
             stmt.setInt(1, id);
 

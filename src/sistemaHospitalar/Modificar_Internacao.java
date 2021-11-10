@@ -5,8 +5,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import Crud.model.Internacao;
-import Crud.model.Paciente;
-import Crud.model.dao.PacienteDao;
+import Crud.model.dao.InternacaoDao;
 
 import java.sql.*;
 public class Modificar_Internacao extends javax.swing.JFrame {   
@@ -109,7 +108,7 @@ public class Modificar_Internacao extends javax.swing.JFrame {
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -160,14 +159,28 @@ public class Modificar_Internacao extends javax.swing.JFrame {
             String tfquarto = jTextField5.getText();
             int id= Integer.parseInt(jTextField1.getText());
             
-
+            
+            InternacaoDao pdao = new InternacaoDao();
+            Internacao inter = new Internacao(pdao.read(id));
+            inter.setDataEntrada(tfdata_entrada);
+            inter.setCausa(tfcausa);
+            inter.setQuarto(tfquarto);
+            inter.setDataSaida(tfdata_saida);
+//            if(tfdata_saida == null || tfdata_saida == "") {
+//            	inter.setDataSaida("");
+//            }
+//            else {
+//            	inter.setDataSaida(tfdata_saida);
+//            }
+            
+            pdao.update(inter);
           
             
-                jTextField1.setText(" ");
-                jTextField2.setText(" ");
-                jTextField3.setText(" ");
-                jTextField4.setText(" ");
-                jTextField5.setText(" ");
+            jTextField1.setText(" ");
+            jTextField2.setText(" ");
+            jTextField3.setText(" ");
+            jTextField4.setText(" ");
+            jTextField5.setText(" ");
 
             
             

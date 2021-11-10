@@ -7,6 +7,9 @@ package sistemaHospitalar;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
+import Crud.model.Internacao;
+import Crud.model.dao.InternacaoDao;
+
 
 public class Procurar_Internacao extends javax.swing.JFrame {
 
@@ -135,21 +138,24 @@ public class Procurar_Internacao extends javax.swing.JFrame {
         try {
  
 
-            String  Tf1 = jTextField1.getText();
-            System.out.println("Value of Entered id: "+Tf1);
-            String querySearch = "SELECT * FROM STUDENTS WHERE ID= "+Tf1;
+            String  TfId = jTextField1.getText();
             
-
-            String result = "resultado";
-            System.out.println("Searched Id details are: "+result);
-             if(result == "resultado"){
-                System.out.println("Search id details are: ");
-                JOptionPane.showMessageDialog(rootPane," Are You Want to Seen Details of Entered Id. " + result);
-            }
-            else{
-                System.out.println("No any such id found ");
-                JOptionPane.showMessageDialog(rootPane," No any such id found"+"\n"+" Enter Correct Id ");
-            }
+            
+            InternacaoDao idao = new InternacaoDao();
+            Internacao inter = new Internacao(idao.read(Integer.parseInt(TfId)));
+            
+            PrintInternacao pi = new PrintInternacao(inter);
+            pi.setVisible(true);
+            
+            
+//             if(result == "resultado"){
+//                System.out.println("Search id details are: ");
+//                JOptionPane.showMessageDialog(rootPane," Are You Want to Seen Details of Entered Id. " + result);
+//            }
+//            else{
+//                System.out.println("No any such id found ");
+//                JOptionPane.showMessageDialog(rootPane," No any such id found"+"\n"+" Enter Correct Id ");
+//            }
         }catch (Exception error) {
             System.out.println("Error found ");
         }

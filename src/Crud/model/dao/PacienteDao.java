@@ -24,7 +24,7 @@ public class PacienteDao {
         try {
             stmt = conn.prepareStatement("INSERT INTO gestao_hosp.paciente" +  
             "(nome, sexo, data_nasc, cpf, plano_saude, created_at)" + 
-            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            "VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, paciente.getNome());
             stmt.setString(2, paciente.getSexo());
             stmt.setString(3, paciente.getDataNasc());
@@ -52,7 +52,7 @@ public class PacienteDao {
         
         try {
             stmt = conn.prepareStatement("SELECT * FROM paciente " + 
-            "WHERE paciente.deleted_at IS NOT NULL");
+            "WHERE paciente.deleted_at IS NULL");
             rs = stmt.executeQuery();
             
             while (rs.next()){
@@ -139,7 +139,7 @@ public class PacienteDao {
         
         try {
             stmt = conn.prepareStatement("SELECT * FROM paciente " + 
-            "WHERE paciente.deleted_at IS NOT NULL " + 
+            "WHERE paciente.deleted_at IS NULL " + 
             "AND paciente.id = ?");
             stmt.setInt(1, id);
 

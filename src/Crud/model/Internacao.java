@@ -22,7 +22,18 @@ public class Internacao {
         this.created_at = created_at;
         this.deleted_at = deleted_at;
      }
-
+    
+    public Internacao(Internacao i) {
+    	        this.id = i.getId();
+    	        this.paciente_id = i.getPacienteId();
+    	        this.data_entrada = i.getDataEntrada();
+    	        this.data_saida = i.getDataSaida();
+    	        this.causa = i.getCausa();
+    	        this.quarto = i.getQuarto();
+    	        this.created_at = i.getCreatedAt();
+    	        this.deleted_at = i.getDeletedAt();
+    	     }
+    
     public int getId() {
         return id;
     }
