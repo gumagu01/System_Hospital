@@ -28,7 +28,7 @@ public class Cadastrar_Paciente extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 102, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 19)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText(" Cadastro Paciente");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
