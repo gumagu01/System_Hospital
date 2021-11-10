@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.sql.*;
 public class Modificar_Pacientes extends javax.swing.JFrame {   
-    public Cadastrar_Paciente() {
+    public void Cadastrar_Paciente() {
         initComponents();
     }
 
@@ -43,7 +43,7 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Plano de saúde");
+        jLabel5.setText("Plano de saï¿½de");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
@@ -163,7 +163,7 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
             
             Statement st = con.createStatement();*/
       
-            System.out.println("Query4= "+ query4);
+//            System.out.println("Query4= "+ query4);
             //st.execute(query4);
             System.out.println("Your details Submited");
             JOptionPane.showMessageDialog(rootPane, "Your details Submited");

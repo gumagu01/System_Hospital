@@ -51,10 +51,9 @@ public class ConnectionFactory {
             }
         }
 
-<<<<<<< HEAD
+
 //     test connection!
-=======
->>>>>>> css
+
 //     public static void main(String[] args) throws Exception{
 //         Connection con = getConnection();
 //         if(con != null){
