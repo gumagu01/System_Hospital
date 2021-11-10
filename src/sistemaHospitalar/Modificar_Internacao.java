@@ -157,22 +157,16 @@ public class Modificar_Internacao extends javax.swing.JFrame {
             String  tfdata_saida  = jTextField3.getText();
             String  tfcausa = jTextField4.getText();
             String tfquarto = jTextField5.getText();
-            int id= Integer.parseInt(jTextField1.getText());
-            
+            String tfId = jTextField1.getText();
             
             InternacaoDao pdao = new InternacaoDao();
-            Internacao inter = new Internacao(pdao.read(id));
+            
+            System.out.println(pdao.read(Integer.parseInt(tfId)));
+            Internacao inter = new Internacao(pdao.read(Integer.parseInt(tfId)));
             inter.setDataEntrada(tfdata_entrada);
             inter.setCausa(tfcausa);
             inter.setQuarto(tfquarto);
             inter.setDataSaida(tfdata_saida);
-//            if(tfdata_saida == null || tfdata_saida == "") {
-//            	inter.setDataSaida("");
-//            }
-//            else {
-//            	inter.setDataSaida(tfdata_saida);
-//            }
-            
             pdao.update(inter);
           
             
@@ -182,7 +176,7 @@ public class Modificar_Internacao extends javax.swing.JFrame {
             jTextField4.setText(" ");
             jTextField5.setText(" ");
 
-            
+            JOptionPane.showMessageDialog(rootPane, "Your updates Submited");
             
             
         }catch(Exception Ex){
@@ -230,5 +224,5 @@ public class Modificar_Internacao extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
- 
+
 }

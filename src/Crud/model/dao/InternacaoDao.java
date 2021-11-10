@@ -84,7 +84,7 @@ public class InternacaoDao {
 
         try {
             stmt = conn.prepareStatement("UPDATE internacao " + 
-            "SET data_entrada = ? data_saida = ? causa = ? quarto = ? " +
+            "SET data_entrada = ?, data_saida = ?, causa = ?, quarto = ? " +
             "WHERE id = ?");
             stmt.setString(1, internacao.getDataEntrada());
             stmt.setString(2, internacao.getDataSaida());
@@ -97,6 +97,7 @@ public class InternacaoDao {
         }
         catch (SQLException e) {
             // PRINT EXCEPTION NA TELA
+        	System.out.println(e);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
