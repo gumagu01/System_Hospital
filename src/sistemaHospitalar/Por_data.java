@@ -132,30 +132,24 @@ public class Por_data extends javax.swing.JFrame {
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        System.out.println("Clicked Search Btn ");
         Procurar_Internacao sp = new Procurar_Internacao();
         sp.setVisible(true);
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        System.out.println("Add new Student detail btn Clicked");
-        System.out.println("StudentLoginPage GUI Page Open");
         Cadastrar_Internacao slp = new Cadastrar_Internacao();
         slp.setVisible(true);
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-        System.out.println("Delete Student detail tn clicked.");
-        System.out.println("Delete Frame OPened.");
         Deletar_Internacao dsd = new Deletar_Internacao();
         dsd.setVisible(true);
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
-        System.out.println("Clicked Update Btn ");
-        Deletar_Internacao upd = new Deletar_Internacao();
+    	Modificar_Internacao upd = new Modificar_Internacao();
         upd.setVisible(true);
     }
 
