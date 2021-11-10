@@ -3,9 +3,14 @@ package sistemaHospitalar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+import Crud.model.Internacao;
+import Crud.model.Paciente;
+import Crud.model.dao.PacienteDao;
+
 import java.sql.*;
-public class Cadastrar_Data extends javax.swing.JFrame {   
-    public Cadastrar_Data() {
+public class Modificar_Internacao extends javax.swing.JFrame {   
+    public Modificar_Internacao() {
         initComponents();
     }
 
@@ -29,25 +34,26 @@ public class Cadastrar_Data extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 19)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText(" Cadastro Paciente");
+        jLabel1.setText(" Modificar Internacao");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("Nome");
-
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel2.setSize(jLabel2.getPreferredSize());
+        jLabel2.setText("ID da internacao");
+        
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("CPF ");
+        jLabel3.setText("data_entrada(YYYY-MM-DD HH:mm:ss)");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel4.setText("Data de Nasc");
+        jLabel4.setText("data_saida(YYYY-MM-DD HH:mm:ss)");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Plano de saude");
+        jLabel5.setText("causa");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel6.setText("Sexo(H/M)");
+        jLabel6.setText("quarto");
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,11 +96,11 @@ public class Cadastrar_Data extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -148,25 +154,14 @@ public class Cadastrar_Data extends javax.swing.JFrame {
         
         try {
             
-            String tfName= jTextField1.getText();
-            String  tfReg = jTextField2.getText();
-            String  tfDept = jTextField3.getText();
-            String tfMob = jTextField4.getText();
-            String tfEmail= jTextField5.getText();
+            String tfdata_entrada= jTextField2.getText();
+            String  tfdata_saida  = jTextField3.getText();
+            String  tfcausa = jTextField4.getText();
+            String tfquarto = jTextField5.getText();
+            int id= Integer.parseInt(jTextField1.getText());
             
-            /*
-            String dbURL = "jdbc:derby://localhost:1527/collegeDB;create=true";
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            
-            Connection con = DriverManager.getConnection(dbURL);
-            
-            
-            Statement st = con.createStatement();*/
-            String query4 = "Insert into students values("+ tfReg+",'"+tfDept+"', '"+tfEmail+"', '"+tfMob+"', '"+tfName+"',null)";
-            System.out.println("Query4= "+ query4);
-            //st.execute(query4);
-            System.out.println("Your details Submited");
-            JOptionPane.showMessageDialog(rootPane, "Your details Submited");
+
+          
             
                 jTextField1.setText(" ");
                 jTextField2.setText(" ");
@@ -205,7 +200,7 @@ public class Cadastrar_Data extends javax.swing.JFrame {
     public static void main(String args[]) {
           java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastrar_Data().setVisible(true);
+                new Modificar_Internacao().setVisible(true);
             }
         }); }
 

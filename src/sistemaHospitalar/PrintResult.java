@@ -4,16 +4,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+import Crud.model.Internacao;
 import Crud.model.Paciente;
 import Crud.model.dao.PacienteDao;
 
 import java.sql.*;
-public class Modificar_Pacientes extends javax.swing.JFrame {   
-    public Modificar_Pacientes() {
-        initComponents();
+public class PrintResult extends javax.swing.JFrame {   
+    public PrintResult(Internacao inte1) {
+        initComponents(inte1);
     }
 
-    private void initComponents() {
+    private void initComponents(Internacao inte2) {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -21,82 +22,69 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JLabel();
+
 
         setBackground(new java.awt.Color(204, 102, 255));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 19)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText(" Modificar Paciente");
+        jLabel1.setText(" Detalhes da Internacao");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("Id");
+        jLabel2.setText("Data de entrada");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("Nome ");
+        jLabel3.setText("Data de saida ");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel4.setText("Data de Nasc");
+        jLabel4.setText("Causa");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Plano de saude");
+        jLabel5.setText("Quarto");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel6.setText("Sexo(H/M)");
+        jLabel6.setText("Id do paciente");
+        
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField1.setText( inte2.getDataEntrada());
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField2.setText( inte2.getDataSaida());
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 51, 153));
-        jButton1.setText("Clear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(0, 0, 51));
+        jTextField3.setText( inte2.getCausa());
 
-        jButton2.setBackground(new java.awt.Color(204, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 51, 153));
-        jButton2.setText("Submit");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(0, 0, 51));
+        jTextField4.setText(inte2.getQuarto());
+
+        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(0, 0, 51));
+        jTextField5.setText(String.valueOf(inte2.getPacienteId()));
+
+
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(81, 81, 81)
@@ -139,85 +127,34 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
         );
 
         pack();
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        try {
-            
-        	String tfName= jTextField1.getText();
-            String  tfcpf = jTextField2.getText();
-            String  tfDtnasc = jTextField3.getText();
-            String tfplan = jTextField4.getText();
-            String tfsx= jTextField5.getText();
-            
-            Paciente paciente1 = new Paciente(0, tfName, tfsx, tfDtnasc, tfcpf, tfplan, null, null);
-            PacienteDao pdao = new PacienteDao();
-            pdao.create(paciente1);
-            
-            System.out.println("Your details Submited");
-            JOptionPane.showMessageDialog(rootPane, "Your details Submited");
-            
-                jTextField1.setText(" ");
-                jTextField2.setText(" ");
-                jTextField3.setText(" ");
-                jTextField4.setText(" ");
-                jTextField5.setText(" ");
 
-            
-            
-            
-        }catch(Exception Ex){
-        	System.out.println(Ex);
-        }
-        /*catch (ClassNotFoundException ex) {
-        }
-            System.out.println("some error occured;" +ex);
-            
-        } catch (SQLException ex) {
 
-            System.out.println("Some error occured"+ex);
-            JOptionPane.showMessageDialog(rootPane, "Some error");
-        }*/
-    }
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+ 
 
-    }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        jTextField1.setText(" ");
-        jTextField2.setText(" ");
-        jTextField3.setText(" ");
-        jTextField4.setText(" ");
-        jTextField5.setText(" ");
-    }
-
-    public static void main(String args[]) {
+    public static void main(String[] args) {
           java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Modificar_Pacientes().setVisible(true);
+               // new PrintResult(paciente1).setVisible(true);
             }
         }); }
 
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel jTextField1;
+    private javax.swing.JLabel jTextField2;
+    private javax.swing.JLabel jTextField3;
+    private javax.swing.JLabel jTextField4;
+    private javax.swing.JLabel jTextField5;
  
 }

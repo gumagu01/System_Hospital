@@ -53,7 +53,7 @@ public class Por_Paciente extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(102, 153, 255));
         jButton3.setForeground(new java.awt.Color(102, 0, 51));
-        jButton3.setText("Detalhes do paciente");
+        jButton3.setText("Consultar paciente");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);

@@ -35,13 +35,13 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1.setText("Sistema de Gestao Hospitalar");
 
 
-     //   jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+//   	jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setPreferredSize(new Dimension(500,100));
         jPanel1.setLayout(new FlowLayout(FlowLayout.LEFT,400,20));
 
         jButton1.setBackground(new java.awt.Color(102, 153, 255));
         jButton1.setForeground(new java.awt.Color(102, 0, 51));
-        jButton1.setText("Consultar por paciente");
+        jButton1.setText("Gerenciar paciente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -50,7 +50,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(102, 153, 255));
         jButton2.setForeground(new java.awt.Color(102, 0, 51));
-        jButton2.setText("Consultar por data");
+        jButton2.setText("Gerenciar internacoes");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

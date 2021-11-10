@@ -24,7 +24,7 @@ public class Por_data extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 102));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Consulta por data");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -35,7 +35,7 @@ public class Por_data extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(102, 153, 255));
         jButton1.setForeground(new java.awt.Color(102, 0, 51));
-        jButton1.setText("Adicionar paciente na data");
+        jButton1.setText("Adicionar internacao");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -44,7 +44,7 @@ public class Por_data extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(102, 153, 255));
         jButton2.setForeground(new java.awt.Color(102, 0, 51));
-        jButton2.setText("Deletar pacientes");
+        jButton2.setText("Deletar internacao");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -53,7 +53,7 @@ public class Por_data extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(102, 153, 255));
         jButton3.setForeground(new java.awt.Color(102, 0, 51));
-        jButton3.setText("Consultar pacientes");
+        jButton3.setText("Consultar internacao");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -62,7 +62,7 @@ public class Por_data extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(102, 153, 255));
         jButton4.setForeground(new java.awt.Color(102, 0, 0));
-        jButton4.setText("Modificar data");
+        jButton4.setText("Modificar internacao");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -183,7 +183,7 @@ public class Por_data extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomePage().setVisible(true);
+                new Por_data().setVisible(true);
             }
         });
     }

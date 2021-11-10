@@ -97,7 +97,7 @@ public class PacienteDao {
             // Mensagem de update
         }
         catch (SQLException e) {
-            // PRINT EXCEPTION NA TELA
+            System.out.println("Erro na execucao do SQL: " + e);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);

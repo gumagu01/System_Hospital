@@ -18,7 +18,6 @@ public class InternacaoDao {
         PreparedStatement stmt = null;
 
         java.sql.Timestamp timestamp = new java.sql.Timestamp(System.currentTimeMillis());
-        // Date date = new Date(timestamp.getTime());
         String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(timestamp.getTime());
 
         try {
