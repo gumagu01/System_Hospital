@@ -3,6 +3,10 @@ package sistemaHospitalar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+import Crud.model.Paciente;
+import Crud.model.dao.PacienteDao;
+
 import java.sql.*;
 public class Cadastrar_Paciente extends javax.swing.JFrame {   
     public Cadastrar_Paciente() {
@@ -43,7 +47,7 @@ public class Cadastrar_Paciente extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Plano de saúde");
+        jLabel5.setText("Plano de saï¿½de");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
@@ -148,23 +152,16 @@ public class Cadastrar_Paciente extends javax.swing.JFrame {
         
         try {
             
-            String tfName= jTextField1.getText();
-            String  tfReg = jTextField2.getText();
-            String  tfDept = jTextField3.getText();
-            String tfMob = jTextField4.getText();
-            String tfEmail= jTextField5.getText();
+        	String tfName= jTextField1.getText();
+            String  tfcpf = jTextField2.getText();
+            String  tfDtnasc = jTextField3.getText();
+            String tfplan = jTextField4.getText();
+            String tfsx= jTextField5.getText();
             
-            /*
-            String dbURL = "jdbc:derby://localhost:1527/collegeDB;create=true";
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            Paciente paciente1 = new Paciente(0, tfName, tfsx, tfDtnasc, tfcpf, tfplan, null, null);
+            PacienteDao pdao = new PacienteDao();
+            pdao.create(paciente1);
             
-            Connection con = DriverManager.getConnection(dbURL);
-            
-            
-            Statement st = con.createStatement();*/
-            String query4 = "Insert into students values("+ tfReg+",'"+tfDept+"', '"+tfEmail+"', '"+tfMob+"', '"+tfName+"',null)";
-            System.out.println("Query4= "+ query4);
-            //st.execute(query4);
             System.out.println("Your details Submited");
             JOptionPane.showMessageDialog(rootPane, "Your details Submited");
             

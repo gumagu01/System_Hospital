@@ -25,8 +25,15 @@ public class ConnectionFactory {
     }
 
     public static void closeConnection(Connection con) {
-        closeConnection(con);
-    }
+    	try {
+			if(con != null) {
+				con.close();
+			}
+		} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+    
     
     public static void closeConnection(Connection con, PreparedStatement stmt) {
 		
@@ -59,5 +66,5 @@ public class ConnectionFactory {
 //             con.close();
 //         }
 //     }
-//
+
 }
