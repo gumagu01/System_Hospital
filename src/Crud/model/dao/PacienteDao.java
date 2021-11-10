@@ -104,7 +104,7 @@ public class PacienteDao {
         }
     }
     // SOFT DELETE
-    public void delete(Paciente paciente) {
+    public void delete(int id) {
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
 
@@ -117,10 +117,10 @@ public class PacienteDao {
             "SET deleted_at = ? " +
             "WHERE id = ?");
             stmt.setString(1, date);
-            stmt.setString(2, Integer.toString(paciente.getId()));
+            stmt.setString(2, Integer.toString(id));
             
-            stmt.executeUpdate();
-            // Mensagem de update
+            stmt.execute();
+            
         }
         catch (SQLException e) {
             // PRINT EXCEPTION NA TELA
@@ -165,5 +165,30 @@ public class PacienteDao {
         }
         return paciente;
     }
-
+    
+//    public boolean exist(String id) {
+//        Connection conn = ConnectionFactory.getConnection();
+//        PreparedStatement stmt = null;
+//        ResultSet rs = null;
+//        Paciente paciente = null;
+//        
+//        try {
+//            stmt = conn.prepareStatement("SELECT COUNT(1)\n" + 
+//            		"FROM gestao_hosp.paciente\n" + 
+//            		"WHERE id = ?;");
+//            stmt.setString(1, id);
+//
+//            rs = stmt.executeQuery();
+//            
+//            System.out.println("rs");
+//            
+//            ConnectionFactory.closeConnection(conn, stmt, rs);
+//            return true;
+//        }
+//        catch (SQLException e) {
+//            // PRINT ERROR FRONT
+//        	ConnectionFactory.closeConnection(conn, stmt, rs);
+//        	return false;
+//        }
+//    }
 }

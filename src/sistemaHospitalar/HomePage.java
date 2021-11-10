@@ -41,7 +41,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(102, 153, 255));
         jButton1.setForeground(new java.awt.Color(102, 0, 51));
-        jButton1.setText("Consultar por paciente");
+        jButton1.setText("Gerenciar paciente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -50,7 +50,7 @@ public class HomePage extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(102, 153, 255));
         jButton2.setForeground(new java.awt.Color(102, 0, 51));
-        jButton2.setText("Consultar por data");
+        jButton2.setText("Gerenciar Internacao");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -111,8 +111,6 @@ public class HomePage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        System.out.println("Add new Student detail btn Clicked");
-        System.out.println("StudentLoginPage GUI Page Open");
         Por_Paciente slp = new Por_Paciente();
         slp.setVisible(true);
         dispose();

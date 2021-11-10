@@ -3,9 +3,13 @@ package sistemaHospitalar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+import Crud.model.Paciente;
+import Crud.model.dao.PacienteDao;
+
 import java.sql.*;
 public class Modificar_Pacientes extends javax.swing.JFrame {   
-    public void Cadastrar_Paciente() {
+    public Modificar_Pacientes() {
         initComponents();
     }
 
@@ -29,10 +33,10 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 19)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText(" Modificar Pacientes");
+        jLabel1.setText(" Modificar Paciente");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("ID");
+        jLabel2.setText("Id");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Nome ");
@@ -43,7 +47,7 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Plano de sa�de");
+        jLabel5.setText("Plano de saude");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
@@ -91,8 +95,8 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(81, 81, 81)
@@ -149,22 +153,22 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
         try {
             
         	String tfId= jTextField1.getText();
-            String  tfNome = jTextField2.getText();
-            String  tfDtnasc = jTextField3.getText();
-            String tfPlan = jTextField4.getText();
-            String tfCpf= jTextField5.getText();
-            
-            /*
-            String dbURL = "jdbc:derby://localhost:1527/collegeDB;create=true";
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            
-            Connection con = DriverManager.getConnection(dbURL);
+            String tfName = jTextField2.getText();
+            String tfDtnasc = jTextField3.getText();
+            String tfplan = jTextField4.getText();
+            String tfsx= jTextField5.getText();
             
             
-            Statement st = con.createStatement();*/
-      
-//            System.out.println("Query4= "+ query4);
-            //st.execute(query4);
+            PacienteDao pdao = new PacienteDao();
+            Paciente pac = new Paciente(pdao.read(Integer.parseInt(tfId)));
+            pac.setNome(tfName);
+            pac.setDataNasc(tfDtnasc);
+            pac.setPlanoSaude(tfplan);
+            pac.setSexo(tfsx);
+            
+            
+            pdao.update(pac);
+            
             System.out.println("Your details Submited");
             JOptionPane.showMessageDialog(rootPane, "Your details Submited");
             
@@ -175,20 +179,9 @@ public class Modificar_Pacientes extends javax.swing.JFrame {
                 jTextField5.setText(" ");
 
             
-            
-            
         }catch(Exception Ex){
         	System.out.println(Ex);
         }
-        /*catch (ClassNotFoundException ex) {
-        }
-            System.out.println("some error occured;" +ex);
-            
-        } catch (SQLException ex) {
-
-            System.out.println("Some error occured"+ex);
-            JOptionPane.showMessageDialog(rootPane, "Some error");
-        }*/
     }
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
 

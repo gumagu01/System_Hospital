@@ -21,6 +21,17 @@ public class Paciente {
         this.created_at = created_at;
         this.deleted_at = deleted_at;
     }
+    
+    public Paciente(Paciente p) {
+    	        this.id = p.getId();
+    	        this.nome = p.getNome();
+    	        this.sexo = p.getSexo();
+    	        this.data_nasc = p.getDataNasc();
+    	        this.cpf = p.getCpf();
+    	        this.plano_saude = p.getPlanoSaude();
+    	        this.created_at = p.getCreatedAt();
+    	        this.deleted_at = p.getDeletedAt();
+    	    }
 
     public int getId() {
         return id;

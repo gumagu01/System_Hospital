@@ -3,9 +3,13 @@ package sistemaHospitalar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+import Crud.model.Internacao;
+import Crud.model.dao.InternacaoDao;
+
 import java.sql.*;
-public class Cadastrar_Data extends javax.swing.JFrame {   
-    public Cadastrar_Data() {
+public class Cadastrar_Internacao extends javax.swing.JFrame {   
+    public Cadastrar_Internacao() {
         initComponents();
     }
 
@@ -29,25 +33,25 @@ public class Cadastrar_Data extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 19)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel1.setText(" Cadastro Paciente");
+        jLabel1.setText(" Cadastrar Internacao");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("Nome");
+        jLabel2.setText("data_entrada (ex: 2021-11-29 12:36:00)");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("CPF ");
+        jLabel3.setText("data_saida (ex: 2021-11-29 12:36:00)");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel4.setText("Data de Nasc");
+        jLabel4.setText("causa");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel5.setText("Plano de saude");
+        jLabel5.setText("quarto");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 51));
-        jLabel6.setText("Sexo(H/M)");
+        jLabel6.setText("paciente_id");
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +97,8 @@ public class Cadastrar_Data extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -103,7 +107,7 @@ public class Cadastrar_Data extends javax.swing.JFrame {
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,47 +152,31 @@ public class Cadastrar_Data extends javax.swing.JFrame {
         
         try {
             
-            String tfName= jTextField1.getText();
-            String  tfReg = jTextField2.getText();
-            String  tfDept = jTextField3.getText();
-            String tfMob = jTextField4.getText();
-            String tfEmail= jTextField5.getText();
+            String tfdata_entrada= jTextField1.getText();
+            String  tfdata_saida  = jTextField2.getText();
+            String  tfcausa = jTextField3.getText();
+            String tfquarto = jTextField4.getText();
+            int paciente_id= Integer.parseInt(jTextField5.getText());
             
-            /*
-            String dbURL = "jdbc:derby://localhost:1527/collegeDB;create=true";
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-            
-            Connection con = DriverManager.getConnection(dbURL);
+            Internacao internacao = new Internacao(0, paciente_id, tfdata_entrada, tfdata_saida, tfcausa, tfquarto, null, null);
+            InternacaoDao idao = new InternacaoDao();
+            idao.create(internacao);
             
             
-            Statement st = con.createStatement();*/
-            String query4 = "Insert into students values("+ tfReg+",'"+tfDept+"', '"+tfEmail+"', '"+tfMob+"', '"+tfName+"',null)";
-            System.out.println("Query4= "+ query4);
-            //st.execute(query4);
             System.out.println("Your details Submited");
             JOptionPane.showMessageDialog(rootPane, "Your details Submited");
             
-                jTextField1.setText(" ");
-                jTextField2.setText(" ");
-                jTextField3.setText(" ");
-                jTextField4.setText(" ");
-                jTextField5.setText(" ");
+            jTextField1.setText(" ");
+            jTextField2.setText(" ");
+            jTextField3.setText(" ");
+            jTextField4.setText(" ");
+            jTextField5.setText(" ");
 
-            
-            
+           
             
         }catch(Exception Ex){
         	System.out.println(Ex);
         }
-        /*catch (ClassNotFoundException ex) {
-        }
-            System.out.println("some error occured;" +ex);
-            
-        } catch (SQLException ex) {
-
-            System.out.println("Some error occured"+ex);
-            JOptionPane.showMessageDialog(rootPane, "Some error");
-        }*/
     }
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
 
@@ -205,7 +193,7 @@ public class Cadastrar_Data extends javax.swing.JFrame {
     public static void main(String args[]) {
           java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastrar_Data().setVisible(true);
+                new Cadastrar_Internacao().setVisible(true);
             }
         }); }
 

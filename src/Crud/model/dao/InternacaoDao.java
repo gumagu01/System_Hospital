@@ -23,15 +23,14 @@ public class InternacaoDao {
 
         try {
             stmt = conn.prepareStatement("INSERT INTO internacao" +  
-            "(paciente_id, data_entrada, data_saida, causa, quarto, created_at, deleted_at)" + 
-            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            "(paciente_id, data_entrada, data_saida, causa, quarto, created_at)" + 
+            "VALUES (?, ?, ?, ?, ?, ?)");
             stmt.setString(1, Integer.toString(internacao.getPacienteId()));
             stmt.setString(2, internacao.getDataEntrada());
             stmt.setString(3, internacao.getDataSaida());
             stmt.setString(4, internacao.getCausa());
             stmt.setString(5, internacao.getQuarto());
             stmt.setString(6, now);
-            stmt.setString(7, "null");
 
             stmt.execute();
             // Print internacao salvo com sucesso
@@ -103,7 +102,9 @@ public class InternacaoDao {
             ConnectionFactory.closeConnection(conn, stmt);
         }
     }
-    public void delete(Internacao internacao) {
+    
+//    SOFT DELETE
+    public void delete(int id) {
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
 
@@ -116,9 +117,9 @@ public class InternacaoDao {
             "SET deleted_at = ? " +
             "WHERE id = ?");
             stmt.setString(1, date);
-            stmt.setString(2, Integer.toString(internacao.getId()));
+            stmt.setString(2, Integer.toString(id));
             
-            stmt.executeUpdate();
+            stmt.execute();
             // Mensagem de update
         }
         catch (SQLException e) {

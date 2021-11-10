@@ -24,18 +24,18 @@ public class Por_data extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 102));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel1.setText("Consulta por data");
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Gerenciar Internacao");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
-        jLabel2.setText("Escolha a ação desejada");
+        jLabel2.setText("Escolha a acao desejada");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton1.setBackground(new java.awt.Color(102, 153, 255));
         jButton1.setForeground(new java.awt.Color(102, 0, 51));
-        jButton1.setText("Adicionar paciente na data");
+        jButton1.setText("Adicionar internacao");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -44,7 +44,7 @@ public class Por_data extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(102, 153, 255));
         jButton2.setForeground(new java.awt.Color(102, 0, 51));
-        jButton2.setText("Deletar pacientes");
+        jButton2.setText("Deletar internacao");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -53,7 +53,7 @@ public class Por_data extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(102, 153, 255));
         jButton3.setForeground(new java.awt.Color(102, 0, 51));
-        jButton3.setText("Consultar pacientes");
+        jButton3.setText("Consultar internacao");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -62,7 +62,7 @@ public class Por_data extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(102, 153, 255));
         jButton4.setForeground(new java.awt.Color(102, 0, 0));
-        jButton4.setText("Modificar data");
+        jButton4.setText("Modificar internacao");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -133,7 +133,7 @@ public class Por_data extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         System.out.println("Clicked Search Btn ");
-        Procura_Paciente sp = new Procura_Paciente();
+        Procurar_Internacao sp = new Procurar_Internacao();
         sp.setVisible(true);
     }
 
@@ -141,21 +141,21 @@ public class Por_data extends javax.swing.JFrame {
 
         System.out.println("Add new Student detail btn Clicked");
         System.out.println("StudentLoginPage GUI Page Open");
-        Cadastrar_Paciente slp = new Cadastrar_Paciente();
+        Cadastrar_Internacao slp = new Cadastrar_Internacao();
         slp.setVisible(true);
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         System.out.println("Delete Student detail tn clicked.");
         System.out.println("Delete Frame OPened.");
-        Deletar_Paciente dsd = new Deletar_Paciente();
+        Deletar_Internacao dsd = new Deletar_Internacao();
         dsd.setVisible(true);
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 
         System.out.println("Clicked Update Btn ");
-        Modificar_Pacientes upd = new Modificar_Pacientes();
+        Deletar_Internacao upd = new Deletar_Internacao();
         upd.setVisible(true);
     }
 
@@ -183,7 +183,7 @@ public class Por_data extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomePage().setVisible(true);
+                new Por_data().setVisible(true);
             }
         });
     }

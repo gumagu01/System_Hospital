@@ -2,17 +2,17 @@ package sistemaHospitalar;
 
 import javax.swing.JOptionPane;
 
-import Crud.model.Paciente;
-import Crud.model.dao.PacienteDao;
+import Crud.model.Internacao;
+import Crud.model.dao.InternacaoDao;
 
 import java.sql.*;
 
 
 
-public class Deletar_Paciente extends javax.swing.JFrame {
+public class Deletar_Internacao extends javax.swing.JFrame {
 
   
-    public Deletar_Paciente() {
+    public Deletar_Internacao() {
         initComponents();
     }
 
@@ -43,7 +43,7 @@ public class Deletar_Paciente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 19)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Deletar detalhes dos pacientes");
+        jLabel3.setText("Deletar internacao");
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -104,13 +104,13 @@ public class Deletar_Paciente extends javax.swing.JFrame {
     
             String Tf1 = jTextField1.getText();
             
-            PacienteDao pdao = new PacienteDao();
+            InternacaoDao idao = new InternacaoDao();
             
            
 //            Boolean res = pdao.exist(Integer.parseInt(Tf1));
             
             if(Tf1 != ""){
-            	pdao.delete(Integer.parseInt(Tf1));
+            	idao.delete(Integer.parseInt(Tf1));
                 System.out.println("deleted Sucessfully ");
                 JOptionPane.showMessageDialog(rootPane," Delete Sucessful. ");
             }
@@ -138,18 +138,18 @@ public class Deletar_Paciente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Deletar_Paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Deletar_Internacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Deletar_Paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Deletar_Internacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Deletar_Paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Deletar_Internacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Deletar_Paciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Deletar_Internacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Deletar_Paciente().setVisible(true);
+                new Deletar_Internacao().setVisible(true);
             }
         });
     }

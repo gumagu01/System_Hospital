@@ -7,14 +7,11 @@ package sistemaHospitalar;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-import Crud.model.Paciente;
-import Crud.model.dao.PacienteDao;
+
+public class Procurar_Internacao extends javax.swing.JFrame {
 
 
-public class Procura_Paciente extends javax.swing.JFrame {
-
-
-    public Procura_Paciente() {
+    public Procurar_Internacao() {
         initComponents();
     }
 
@@ -32,12 +29,12 @@ public class Procura_Paciente extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Pagina de detalhes: Procure Paciente");
+        jLabel1.setText("Pagina de detalhes: Procure Internacao");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16));
-        jLabel2.setText("ID do paciente");
+        jLabel2.setText("ID da internacao");
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 16));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +73,7 @@ public class Procura_Paciente extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+                        .addComponent(jTextField1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)))
@@ -136,24 +133,23 @@ public class Procura_Paciente extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
-     
-            String  TfId = jTextField1.getText();
+ 
+
+            String  Tf1 = jTextField1.getText();
+            System.out.println("Value of Entered id: "+Tf1);
+            String querySearch = "SELECT * FROM STUDENTS WHERE ID= "+Tf1;
             
-            PacienteDao pdao = new PacienteDao();
-            Paciente pac = new Paciente(pdao.read(Integer.parseInt(TfId)));
-            
-            PrintResult pr = new PrintResult(pac);
-            pr.setVisible(true);
-            
-//             if(result == "resultado"){
-//            	 PrintResult hp = new PrintResult(paciente);
-//                 hp.setVisible(true);
-////                JOptionPane.showMessageDialog(rootPane," Are You Want to Seen Details of Entered Id. " + result);
-//            }
-//            else{
-//                System.out.println("No any such id found ");
-//                JOptionPane.showMessageDialog(rootPane," No any such id found"+"\n"+" Enter Correct Id ");
-//            }
+
+            String result = "resultado";
+            System.out.println("Searched Id details are: "+result);
+             if(result == "resultado"){
+                System.out.println("Search id details are: ");
+                JOptionPane.showMessageDialog(rootPane," Are You Want to Seen Details of Entered Id. " + result);
+            }
+            else{
+                System.out.println("No any such id found ");
+                JOptionPane.showMessageDialog(rootPane," No any such id found"+"\n"+" Enter Correct Id ");
+            }
         }catch (Exception error) {
             System.out.println("Error found ");
         }
@@ -188,7 +184,7 @@ public class Procura_Paciente extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Procura_Paciente().setVisible(true);
+                new Procurar_Internacao().setVisible(true);
             }
         });
     }
